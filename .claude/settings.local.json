@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run cf-typegen:*)",
+      "Bash(npx wrangler d1 list:*)",
+      "Bash(npx wrangler:*)",
+      "Bash(curl -s https://feedpulse.parva-raval45.workers.dev/api/seed -X POST)",
+      "Bash(curl -s https://feedpulse.parva-raval45.workers.dev/api/feedback)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

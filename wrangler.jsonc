@@ -1,0 +1,60 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "feedpulse",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-09-27",
+	"observability": {
+		"enabled": true
+	},
+	/**
+	 * D1 Database Binding
+	 * Replace YOUR_DATABASE_ID with the ID from `wrangler d1 create feedpulse-db`
+	 */
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "feedback-db",
+			"database_id": "ae6b01c6-d70e-4ca6-8e36-e4f62cfbff05"
+		}
+	],
+	/**
+	 * Workers AI Binding
+	 * https://developers.cloudflare.com/workers-ai/
+	 */
+	"ai": {
+		"binding": "AI"
+	}
+	/**
+	 * Note: Remaining options are commented out. Uncomment as needed.
+	 * Smart Placement
+	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
+	 */
+	// "placement": {  "mode": "smart" }
+	/**
+	 * Bindings
+	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
+	 * databases, object storage, AI inference, real-time communication and more.
+	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+	 */
+	/**
+	 * Environment Variables
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+	 * Note: Use secrets to store sensitive data.
+	 * https://developers.cloudflare.com/workers/configuration/secrets/
+	 */
+	// "vars": {  "MY_VARIABLE": "production_value" }
+	/**
+	 * Static Assets
+	 * https://developers.cloudflare.com/workers/static-assets/binding/
+	 */
+	// "assets": {  "directory": "./public/",  "binding": "ASSETS" }
+	/**
+	 * Service Bindings (communicate between multiple Workers)
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
+	 */
+	// "services": [  {   "binding": "MY_SERVICE",   "service": "my-service"  } ]
+}
